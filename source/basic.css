@@ -1,0 +1,12 @@
+@import url("reset.css");
+
+@font-face {font-family: NanumSquareRegular; src: url(font/NanumSquareOTFRegular.woff)}
+@font-face {font-family: NanumSquareBold; src: url(font/NanumSquareOTFBold.woff)}
+@font-face {font-family: NanumSquareExtraBold; src: url(font/NanumSquareOTFExtraBold.woff)}
+@font-face {font-family: NanumSquareLight; src: url(font/NanumSquareOTFLight.woff)}
+
+h1 {font-family: NanumSquareExtraBold; font-size: 36px; line-height: 46px; letter-spacing: -1px;}
+p {font-family: NanumSquareRegular; font-size: 15px; line-height: 24px;}
+
+.p_eb {font-family: NanumSquareExtraBold; font-size: 15px;}
+.p_light {font-family: NanumSquareLight; font-size: 12px; line-height: 16.8px;}

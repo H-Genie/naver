@@ -1,0 +1,308 @@
+<html lang="ko">
+<head>
+    <title>NAVER Corporation</title>
+
+    <meta charset="UTF-8">
+    <meta name="author" content="H-Genie">
+    <meta name="description" content=" ">
+    <meta name="keywords" content=" ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" type="text/css" href="source/home.css">
+    <link rel="stylesheet" type="text/css" href="source/media.css">
+    <link rel="icon" href="img/favicon.ico" sizes="16x16">
+
+    <script type="text/javascript" src="source/javascript.js"></script>
+</head>
+
+<!--body 시작--><body>
+    
+    <header>
+        <div class="header_wrap">
+            <div class="header_logo"><img src="img/header_logo.png"></div>
+            
+            <nav>
+                <ul>                    
+                    <li class="p_eb color_333" onmouseover="gnb01()" onmouseout="gnbOut()">네이버</li>
+                    <li class="p_eb color_333" onmouseover="gnb02()" onmouseout="gnbOut()">서비스</li>
+                    <li class="p_eb color_333" onmouseover="gnb03()" onmouseout="gnbOut()">가치실현</li>
+                    <li class="p_eb color_333" onmouseover="gnb04()" onmouseout="gnbOut()">홍보</li>
+                    <li class="p_eb color_333" onmouseover="gnb05()" onmouseout="gnbOut()">투자정보</li>
+                    <li class="p_eb color_333">채용</li>                    
+                </ul>
+            </nav>
+
+            <div class="header_lang">
+                <a class="p_light">KOR</a>
+                <a class="p_light">ENG</a>
+                <button onclick="langButton()">
+                    <span class="menu_line"></span>
+                    <span class="menu_line"></span>
+                    <span class="menu_line"></span>
+                </button>
+            </div>
+        </div>
+
+        <div>            
+            <ul class="lnb" onmouseover="gnb01()" onmouseout="gnbOut()">
+                <li class="lnb_section">
+                    <p>NAVER</p>
+                    <p>네이버 소개</p>
+                    <p>주요연혁</p>
+                    <p>수상내역</p>
+                </li>
+
+                <li class="lnb_section">
+                    <p>주요관계사</p>                    
+                </li>
+
+                <li class="lnb_section">
+                    <p>제휴제안</p>
+                    <p>제휴제안 안내</p>
+                    <p>제휴제안 등록</p>
+                    <p>검토현황 조회</p>
+                </li>
+
+                <li class="lnb_section">
+                    <p>CONTACT</p>                    
+                </li>
+            </ul>
+
+            <ul class="lnb" onmouseover="gnb02()" onmouseout="gnbOut()">
+            
+                <li class="lnb_section">
+                    <p>Featured Services</p>                    
+                </li>
+
+                <li class="lnb_section">
+                    <p>For Business</p>                    
+                </li>
+
+                <li class="lnb_section">
+                    <p>For Creators</p>                    
+                </li>
+
+                <li class="lnb_section">
+                    <p>For Developers</p>                    
+                </li>
+
+                <li class="lnb_section">
+                    <p id="arrow_white">ALL SERVICE</p>                    
+                </li>
+
+            </ul>
+
+
+            <ul class="lnb" onmouseover="gnb03()" onmouseout="gnbOut()">
+
+                <li class="lnb_section">
+                    <p>프로젝트 꽃</p>                    
+                </li>
+
+                <li class="lnb_section">
+                    <p>기업윤리</p>
+                    <p>기업윤리규범</p>
+                    <p>기업윤리 상담센터</p>
+                </li>
+
+                <li class="lnb_section">
+                    <p>프라이버시 센터</p>
+                    <p>네이버 리포트</p>
+                    <p>개인정보보호</p>
+                    <p>정보보호인증</p>
+                </li>
+
+                <li class="lnb_section">
+                    <p>동반성장</p>
+                    <p class="depth_blank">환경</p>
+                    <p>데이터센터 각</p>
+                    <p>네이버 사옥</p>
+                </li>
+
+                <li class="lnb_section">
+                    <p>With Naver</p>
+                    <p>재단법인 해피빈</p>
+                    <p>네이버 문화재단</p>
+                    <p>커넥트 재단</p>
+                    <p>접근성</p>
+                    <p>네이버 라이브러리</p>
+                </li>
+
+            </ul>
+
+            <ul class="lnb" onmouseover="gnb04()" onmouseout="gnbOut()">
+
+                <li class="lnb_section">
+                    <p>보도자료</p>
+                </li>
+
+                <li class="lnb_section">
+                    <p>TV광고</p>
+                </li>
+
+                <li class="lnb_section">
+                    <p>미디어 행사</p>
+                </li>
+
+                <li class="lnb_section">
+                    <p>커뮤니케이션 채널</p>
+                </li>
+
+            </ul>
+
+            <ul class="lnb" onmouseover="gnb05()" onmouseout="gnbOut()">
+            
+                <li class="lnb_section">
+                    <p>기업지배구조</p>
+                    <p>주주구성</p>
+                    <p>이사회</p>
+                    <p>장관</p>
+                </li>
+
+                <li class="lnb_section">
+                    <p>공시정보</p>
+                    <p class="depth_blank">주가정보</p>
+                    <p class="depth_blank">재무제표</p>                    
+                </li>
+
+                <li class="lnb_section">
+                    <p>IR일정</p>
+                    <p>IR행사</p>
+                    <p>IR MEETING</p>
+                    <p>주주총회</p>
+                </li>
+
+                <li class="lnb_section">
+                    <p>IR자료실</p>
+                    <p>실적발표</p>
+                    <p>감사보고서</p>
+                    <p>사업보고서</p>
+                    <p>연차보고서</p>
+                    <p>FAQ</p>
+                </li>
+
+                <li class="lnb_section">
+                    <p>결산공고</p>
+                    <p class="depth_blank">공고</p>                                    
+                </li>
+            
+            </ul>
+            
+            <ul class="lnb"></ul>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="slide_container_full bg_img_01">
+
+            <div class="slide_container">
+
+                <button class="button_prev" onclick="clickPrev()"><img src="img/prev.png"></button>
+             
+                <div class="content_h1 color_white">
+                    <h1>삶의 가치를 높이는<br> 기술을 연구합니다.</h1>
+                </div>
+                
+                <div class="content_hr">
+                    <hr class="progressbar">
+                </div>
+                
+                <div class="content_p color_white">
+                    <p>당신이 더 가치 있는 일에 몰입할 수 있도록<br>삶을 더 깊이 이해하는 기술들을 만들어갑니다.</p>
+                    <br>
+                    <p class="p_light"><span class="current_num">1</span>&nbsp; |&nbsp; 4</p>
+                    <img src="img/smartlens.png">
+                </div>
+                
+                <button class="button_next" onclick="clickNext()"><img src="img/next.png"></button>
+
+            </div>
+
+        </section>
+
+        <section class="slide_container_full bg_img_02">
+
+            <div class="slide_container">
+
+                <button class="button_prev" onclick="clickPrev()"><img src="img/prev.png"></button>
+             
+                <div class="content_h1 color_white">
+                    <h1>무한한 가능성과의<br> 만남을 기대합니다.</h1>
+                </div>
+                
+                <div class="content_hr">
+                    <hr class="progressbar">
+                </div>
+                
+                <div class="content_p color_white">
+                    <p>다양한 스몰비즈니스와 크리에이터의 가치가 발견되고<br>그 이름을 꽃 피울 수 있도록 함께합니다.</p>
+                    <br>
+                    <p class="p_light"><span class="current_num"></span>&nbsp; |&nbsp; 4</p>
+                    <img src="img/projectggot.png">
+                </div>
+                
+                <button class="button_next" onclick="clickNext()"><img src="img/next.png"></button>
+
+            </div>
+
+        </section>
+
+        <section class="slide_container_full bg_img_03">
+
+            <div class="slide_container">
+
+                <button class="button_prev" onclick="clickPrev()"><img src="img/prev.png"></button>
+             
+                <div class="content_h1 color_white">
+                    <h1>더 넓은 세상에서<br> 더 큰 미래를 생각합니다.</h1>
+                </div>
+                
+                <div class="content_hr">
+                    <hr class="progressbar">
+                </div>
+                
+                <div class="content_p color_white">
+                    <p>전 세계 이용자들을 만나 새로운 경험과 가치를 전달하고<br>글로벌과 호흡하는 기술을 통해, 한 단계 진화한 연결을 만들어갑니다.</p>
+                    <br>
+                    <p class="p_light"><span class="current_num"></span>&nbsp; |&nbsp; 4</p>
+                    <img src="img/spacegreen.png">
+                </div>
+                
+                <button class="button_next" onclick="clickNext()"><img src="img/next.png"></button>
+
+            </div>
+
+        </section>
+
+        <section class="slide_container_full bg_img_04">
+
+            <div class="slide_container">
+
+                <button class="button_prev" onclick="clickPrev()"><img src="img/prev.png"></button>
+             
+                <div class="content_h1 color_white">
+                    <h1>생활환경지능 기술로<br> 새로운 연결과 발견의 가능성을 만듭니다.</h1>
+                </div>
+                
+                <div class="content_hr">
+                    <hr class="progressbar">
+                </div>
+                
+                <div class="content_p color_white">
+                    <p>네어버랩스는 사용자의 환경과 상황을 인지하고 이해하여 <br>필요한 정보와 서비스를 알아서 자연스럽게 연결하는 기술을 연구합니다.</p>
+                    <br>
+                    <p class="p_light"><span class="current_num"></span>&nbsp; |&nbsp; 4</p>
+                    <img src="img/labs.png">
+                </div>
+                
+                <button class="button_next" onclick="clickNext()"><img src="img/next.png"></button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+<!--body 끝--></body>
+</html>
