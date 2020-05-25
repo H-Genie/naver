@@ -6,6 +6,8 @@
 @font-face {font-family: NanumSquareLight; src: url(font/NanumSquareOTFLight.woff)}
 
 h1 {font-family: NanumSquareExtraBold; font-size: 36px; line-height: 46px; letter-spacing: -1px;}
+h3 {font-family: NanumSquareBold; font-size: 32px; line-height: 44.8px;}
+h6 {font-family: NanumSquareExtraBold; font-size: 20px; line-height: 28px;}
 p {font-family: NanumSquareRegular; font-size: 15px; line-height: 24px;}
 
 .p_eb {font-family: NanumSquareExtraBold; font-size: 15px;}
