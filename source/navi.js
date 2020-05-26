@@ -1,37 +1,7 @@
-function gnb01 () {    
+function gnbOver (openIndex) {    
     for (i=0; i<document.getElementsByClassName('lnb').length; i++)
     document.getElementsByClassName('lnb')[i].style="height:0;";
-    document.getElementsByClassName('lnb')[0].style="height:276px;";
-}
-
-function gnb02 () {      
-    for (i=0; i<document.getElementsByClassName('lnb').length; i++)
-    document.getElementsByClassName('lnb')[i].style="height:0;";
-    document.getElementsByClassName('lnb')[1].style="height:276px;";
-}
-
-function gnb03 () {   
-    for (i=0; i<document.getElementsByClassName('lnb').length; i++)
-    document.getElementsByClassName('lnb')[i].style="height:0;";
-    document.getElementsByClassName('lnb')[2].style="height:276px;";
-}
-
-function gnb04 () {   
-    for (i=0; i<document.getElementsByClassName('lnb').length; i++)
-    document.getElementsByClassName('lnb')[i].style="height:0;";
-    document.getElementsByClassName('lnb')[3].style="height:276px;";
-}
-
-function gnb05 () {   
-    for (i=0; i<document.getElementsByClassName('lnb').length; i++)
-    document.getElementsByClassName('lnb')[i].style="height:0;";
-    document.getElementsByClassName('lnb')[4].style="height:276px;";
-}
-
-function gnb06 () {   
-    for (i=0; i<document.getElementsByClassName('lnb').length; i++)
-    document.getElementsByClassName('lnb')[i].style="height:0;";
-    document.getElementsByClassName('lnb')[5].style="height:276px;";
+    document.getElementsByClassName('lnb')[openIndex].style="height:276px;";
 }
 
 function gnbOut () {
@@ -84,7 +54,8 @@ window.onscroll = function() {
         }            
      
         else {
-            document.querySelector('header').style="top:-80px;";
+            gnbOut();
+            setTimeout(function(){document.querySelector('header').style="top:-80px;"},400)
         }
     }
     prevScroll = currentScroll;

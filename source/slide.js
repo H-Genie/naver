@@ -4,11 +4,9 @@ var currentBar;
 var progressBar=document.getElementsByClassName('progressbar');
 var currentNum=document.getElementsByClassName('current_num');
 
-var interval=setInterval(clickNext,5000);
+setInterval(clickNext,5000);
 
 function clickPrev() {    
-    clearInterval(interval);
-    
     for (i=0; i<mySlide.length; i++) {
         mySlide[i].style.display="none";
         }
@@ -29,13 +27,10 @@ function clickPrev() {
         currentBar = slideIndex*(100/(mySlide.length+1));
         progressBar[slideIndex-1].style.width=currentBar+"%";
         currentNum[slideIndex-1].innerHTML=slideIndex;
-        }
-    interval++
+        }  
 }
 
-function clickNext() {    
-    //clearInterval(interval);
-
+function clickNext() {        
     for (i=0; i<mySlide.length; i++) {
         mySlide[i].style.display="none";
         }
@@ -56,8 +51,7 @@ function clickNext() {
         currentBar = slideIndex*(100/(mySlide.length+1));
         progressBar[slideIndex-1].style.width=currentBar+"%";
         currentNum[slideIndex-1].innerHTML=slideIndex;
-    }     
-    
+    }         
 }
 
 

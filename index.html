@@ -16,7 +16,7 @@
     <script type="text/javascript" src="source/navi.js"></script>
 </head>
 
-<!--body 시작--><body>
+<!--body 시작--><body onclick="openDown()">
     
     <header>
         <div class="header_wrap">
@@ -24,11 +24,11 @@
             
             <nav>
                 <ul>                    
-                    <li class="p_eb color_333" onmouseover="gnb01()" onmouseout="gnbOut()">네이버</li>
-                    <li class="p_eb color_333" onmouseover="gnb02()" onmouseout="gnbOut()">서비스</li>
-                    <li class="p_eb color_333" onmouseover="gnb03()" onmouseout="gnbOut()">가치실현</li>
-                    <li class="p_eb color_333" onmouseover="gnb04()" onmouseout="gnbOut()">홍보</li>
-                    <li class="p_eb color_333" onmouseover="gnb05()" onmouseout="gnbOut()">투자정보</li>
+                    <li class="p_eb color_333" onmouseover="gnbOver(0)" onmouseout="gnbOut()">네이버</li>
+                    <li class="p_eb color_333" onmouseover="gnbOver(1)" onmouseout="gnbOut()">서비스</li>
+                    <li class="p_eb color_333" onmouseover="gnbOver(2)" onmouseout="gnbOut()">가치실현</li>
+                    <li class="p_eb color_333" onmouseover="gnbOver(3)" onmouseout="gnbOut()">홍보</li>
+                    <li class="p_eb color_333" onmouseover="gnbOver(4)" onmouseout="gnbOut()">투자정보</li>
                     <li class="p_eb color_333">채용</li>                    
                 </ul>
             </nav>
@@ -45,7 +45,7 @@
         </div>
 
         <div>            
-            <ul class="lnb" onmouseover="gnb01()" onmouseout="gnbOut()">
+            <ul class="lnb" onmouseover="gnbOver(0)" onmouseout="gnbOut()">
                 <li class="lnb_section">
                     <p>NAVER</p>
                     <p>네이버 소개</p>
@@ -69,7 +69,7 @@
                 </li>
             </ul>
 
-            <ul class="lnb" onmouseover="gnb02()" onmouseout="gnbOut()">
+            <ul class="lnb" onmouseover="gnbOver(1)" onmouseout="gnbOut()">
             
                 <li class="lnb_section">
                     <p>Featured Services</p>                    
@@ -94,7 +94,7 @@
             </ul>
 
 
-            <ul class="lnb" onmouseover="gnb03()" onmouseout="gnbOut()">
+            <ul class="lnb" onmouseover="gnbOver(2)" onmouseout="gnbOut()">
 
                 <li class="lnb_section">
                     <p>프로젝트 꽃</p>                    
@@ -131,7 +131,7 @@
 
             </ul>
 
-            <ul class="lnb" onmouseover="gnb04()" onmouseout="gnbOut()">
+            <ul class="lnb" onmouseover="gnbOver(3)" onmouseout="gnbOut()">
 
                 <li class="lnb_section">
                     <p>보도자료</p>
@@ -151,7 +151,7 @@
 
             </ul>
 
-            <ul class="lnb" onmouseover="gnb05()" onmouseout="gnbOut()">
+            <ul class="lnb" onmouseover="gnbOver(4)" onmouseout="gnbOut()">
             
                 <li class="lnb_section">
                     <p>기업지배구조</p>
@@ -548,8 +548,7 @@
                             <dl>
                                 <dt>Creators With Naver</dt>
                                 <dd>
-                                    다양한 분야의 창작자들이 그들의 이름을<br> 
-                                    빛낼 수 있도록 네이버가 함께 합니다.
+                                    <span class="text_line">다양한 분야의 창작자들이 그들의 이름을</span>빛낼 수 있도록 네이버가 함께 합니다.
                                 </dd>
                             </dl>
                         </a>
@@ -560,8 +559,7 @@
                             <dl>
                                 <dt>Business With Naver</dt>
                                 <dd>
-                                    파트너들의 성공적인 창업과<br> 
-                                    지속가능한 사업을 위해 노력합니다.
+                                    <span class="text_line">파트너들의 성공적인 창업과</span>지속가능한 사업을 위해 노력합니다.
                                 </dd>
                             </dl>
                         </a>
@@ -572,8 +570,7 @@
                             <dl>
                                 <dt>Developers With Naver</dt>
                                 <dd>
-                                    개발자와 개발사들의 지식과 경험을<br> 
-                                    공유하며 함께 성장해 나갑니다.
+                                    <span class="text_line">개발자와 개발사들의 지식과 경험을</span>공유하며 함께 성장해 나갑니다.
                                 </dd>
                             </dl>
                         </a>
@@ -584,8 +581,7 @@
                             <dl>
                                 <dt>프로젝트 꽃</dt>
                                 <dd>
-                                    다양한 스몰비즈니스와 크리에이터들이<br> 
-                                    꽃 피울 수 있도록 네이버가 함께 합니다.
+                                    <span class="text_line">다양한 스몰비즈니스와 크리에이터들이</span>꽃 피울 수 있도록 네이버가 함께 합니다.
                                 </dd>
                             </dl>
                         </a>
@@ -599,13 +595,16 @@
 
     <footer>
         <div class="footer_wrap">
-            <div class="footer_logo"><img src="img/footer_logo.png"></div>
-            <ul class="footer_menu">
-                <li>제휴제안</li>
-                <li>기업윤리 상담센터</li>
-                <li>개인정보 처리방침</li>
-            </ul>
+            <div class="footer_left">
+                <div class="footer_logo"><img src="img/footer_logo.png"></div>
+                <ul class="footer_menu">
+                    <li>제휴제안</li>
+                    <li>기업윤리 상담센터</li>
+                    <li>개인정보 처리방침</li>
+                </ul>
+            </div>
             <div class="footer_copy"><img src="img/footer_copy.png"></div>
+            
             <div class="affiliate_box" onclick="dropdown()">
                 <p>자회사 바로가기</p>
                 <img src="img/affiliate_btn.png">
@@ -619,16 +618,15 @@
                     <li>Works Mobile</li>
                     <li>NAVER FINANCIAL</li>
                 </ul>
-                <script>                     
+                <script>                                
                     function dropdown() {                    
                         document.getElementsByClassName('dropdown')[0].classList.toggle("open")
                     }                   
                 </script>
             </div>            
         </div>
+        <div class="footer_copy_tablet"><img src="img/footer_copy.png"></div>
     </footer>
-
-    
 
 <!--body 끝--></body>
 </html>
