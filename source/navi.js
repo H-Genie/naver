@@ -29,18 +29,35 @@ function langButton () {
 
         
     }
-    else {
-        line[0].style="top: 25%; transform: rotate(0deg);";
-        line[1].style="display:block;";
-        line[2].style="top: 75%; transform: rotate(0deg);";
 
-        document.querySelector('header').style="background-color:#fff;";
-        document.querySelector('nav').style="display:block;";
-        document.getElementsByClassName('sitemap')[0].style="display:none;";
-        document.querySelector('body').style="overflow-y:visible;";
-        document.getElementsByClassName('header_logo')[0].firstElementChild.src="img/header_logo_green.png";
-        document.getElementsByClassName('header_lang')[0].style="color:black;";
-        button_state=0;
+    else {
+        if(document.body.clientWidth>599) {
+            line[0].style="top: 25%; transform: rotate(0deg);";
+            line[1].style="display:block;";
+            line[2].style="top: 75%; transform: rotate(0deg);";
+
+            document.querySelector('header').style="background-color:#fff;";
+            document.querySelector('nav').style="display:block;";
+            document.getElementsByClassName('sitemap')[0].style="display:none;";
+            document.querySelector('body').style="overflow-y:visible;";
+            document.getElementsByClassName('header_logo')[0].firstElementChild.src="img/header_logo_green.png";
+            document.getElementsByClassName('header_lang')[0].style="color:black;";
+            button_state=0;
+        }
+    
+    else {
+            line[0].style="top: 25%; transform: rotate(0deg);";
+            line[1].style="display:block;";
+            line[2].style="top: 75%; transform: rotate(0deg);";
+
+            document.querySelector('header').style="background-color:#fff;";
+            document.querySelector('nav').style="display:none;";
+            document.getElementsByClassName('sitemap')[0].style="display:none;";
+            document.querySelector('body').style="overflow-y:visible;";
+            document.getElementsByClassName('header_logo')[0].firstElementChild.src="img/header_logo_green.png";
+            document.getElementsByClassName('header_lang')[0].style="color:black;";
+            button_state=0;
+        }
     }
 }
 

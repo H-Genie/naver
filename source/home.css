@@ -198,6 +198,9 @@ footer {width: 100%; background-color: #f8f9fa;}
     .dropdown li:hover {color: #00b843;}
     .dropdown li:hover::after {content: url(../img/thumbnail_dimmed.png); width: 14px; height: 14px; position: absolute; top: -3px ; right: 5px;}
     
+    .footer_menu_mobile {display: none;}
+    .footer_menu_mobile li {padding: 0 10px; border-right: 1px solid #dfe0e1; font-family: NanumSquareRegular; font-size: 14px; color: #878890;}
+    .footer_menu_mobile li:last-child {border-right: none;}
 
     .footer_copy_tablet {display: none; padding-bottom: 36px;}
     .footer_copy_tablet img {margin: 0 auto; display: block;}
