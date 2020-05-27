@@ -16,7 +16,7 @@
     <script type="text/javascript" src="source/navi.js"></script>
 </head>
 
-<!--body 시작--><body onclick="openDown()">
+<!--body 시작--><body>
     
     <header>
         <div class="header_wrap">
@@ -24,12 +24,12 @@
             
             <nav>
                 <ul>                    
-                    <li class="p_eb color_333" onmouseover="gnbOver(0)" onmouseout="gnbOut()">네이버</li>
-                    <li class="p_eb color_333" onmouseover="gnbOver(1)" onmouseout="gnbOut()">서비스</li>
-                    <li class="p_eb color_333" onmouseover="gnbOver(2)" onmouseout="gnbOut()">가치실현</li>
-                    <li class="p_eb color_333" onmouseover="gnbOver(3)" onmouseout="gnbOut()">홍보</li>
-                    <li class="p_eb color_333" onmouseover="gnbOver(4)" onmouseout="gnbOut()">투자정보</li>
-                    <li class="p_eb color_333">채용</li>                    
+                    <li onmouseover="gnbOver(0)" onmouseout="gnbOut()"><p class="p_eb color_333">네이버</p></li>
+                    <li onmouseover="gnbOver(1)" onmouseout="gnbOut()"><p class="p_eb color_333">서비스</p></li>
+                    <li onmouseover="gnbOver(2)" onmouseout="gnbOut()"><p class="p_eb color_333">가치실현</p></li>
+                    <li onmouseover="gnbOver(3)" onmouseout="gnbOut()"><p class="p_eb color_333">홍보</p></li>
+                    <li onmouseover="gnbOver(4)" onmouseout="gnbOut()"><p class="p_eb color_333">투자정보</p></li>
+                    <li><p class="p_eb color_333">채용</p></li>
                 </ul>
             </nav>
 
@@ -210,10 +210,10 @@
 
                 <li>
                     <h6>서비스</h6>
-                    <p class="depth_title">FEATURED SERVICES</p>
-                    <p class="depth_title">FEATURED BUSINESS</p>
-                    <p class="depth_title">FOR CREATORS</p>
-                    <p class="depth_title">FOR CDEVELOPERS</p>
+                    <p class="depth_title">FEATURED<br> SERVICES</p>
+                    <p class="depth_title">FEATURED<br> BUSINESS</p>
+                    <p class="depth_title">FOR<br> CREATORS</p>
+                    <p class="depth_title">FOR<br> CDEVELOPERS</p>
                     <p class="depth_title" id="arrow_white_sitemap">ALL SERVICE</p>
                 </li>
 
@@ -605,7 +605,7 @@
             </div>
             <div class="footer_copy"><img src="img/footer_copy.png"></div>
             
-            <div class="affiliate_box" onclick="dropdown()">
+            <div class="affiliate_box" onmouseover="dropdownOn()" onmouseout="dropdownOff()">
                 <p>자회사 바로가기</p>
                 <img src="img/affiliate_btn.png">
 
@@ -618,10 +618,13 @@
                     <li>Works Mobile</li>
                     <li>NAVER FINANCIAL</li>
                 </ul>
-                <script>                                
-                    function dropdown() {                    
-                        document.getElementsByClassName('dropdown')[0].classList.toggle("open")
-                    }                   
+                <script>                                                   
+                    function dropdownOn() {
+                        document.getElementsByClassName('dropdown')[0].style="display:block;";
+                    }
+                    function dropdownOff() {
+                        document.getElementsByClassName('dropdown')[0].style="display:none;";
+                    }
                 </script>
             </div>            
         </div>

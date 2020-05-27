@@ -6,7 +6,9 @@ var currentNum=document.getElementsByClassName('current_num');
 
 setInterval(clickNext,5000);
 
-function clickPrev() {    
+function clickPrev() {   
+    
+    
     for (i=0; i<mySlide.length; i++) {
         mySlide[i].style.display="none";
         }
