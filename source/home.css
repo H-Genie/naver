@@ -4,6 +4,7 @@
 .color_white {color: white;}
 .color_333 {color: #333;}
 
+
 /* gnb */
 header {width: 100%; height: 80px; background-color: white; position: fixed; left: 0; top: 0; z-index: 5; transition: top 0.4s ease-in-out;}
 
@@ -26,7 +27,7 @@ header {width: 100%; height: 80px; background-color: white; position: fixed; lef
      .header_lang a:nth-child(1)::after {content: '|'; margin: 0 10px;}
      .header_lang a:nth-child(2) {margin-right: 40px;}
 
-     .header_lang button {width: 24px; height: 24px; position: relative;}
+     .header_lang button {width: 24px; height: 24px; position: relative; z-index: 1;}
      .header_lang button:hover span{background-color: #00c73c;}
 
      .menu_line:nth-child(1) {width: 100%; height: 2px; background-color: #333; position: absolute; top: 25%; transition: all 0.3s;}
@@ -52,7 +53,7 @@ header {width: 100%; height: 80px; background-color: white; position: fixed; lef
     .lnb_section p:hover::after {width: 100%;}
     
     .depth_blank {position: relative; margin: 56px 0 14px; font-family: NanumSquareBold; opacity: 1 !important;}
-    .depth_blank::before {content: ''; width: 190px; height: 1px; position: absolute; left: -28px; top:-28px; background-color: white;opacity: 0.3;}
+    .depth_blank::before {content: ''; width: 190px; height: 1px; position: absolute; left: -28px; top:-28px; background-color: white; opacity: 0.3;}
 
 
 /* Sitemap */
@@ -71,6 +72,18 @@ header {width: 100%; height: 80px; background-color: white; position: fixed; lef
     .sitemap p:hover::after {width: 100%;}
     .sitemap br {display: none;}
 
+.sitemap_mobile {width: 266px; height: 100vh; position: fixed; top: 0; right: -100%; background-color: #fff; box-shadow: -5px 0 20px #333; transition: right 0.3s; overflow-y: auto;}
+    .sitemap_mobile ul {width: 100%; padding-top: 80px;}
+    .sitemap_mobile ul li {width: 100%; height: 50px; padding: 10px 33px 10px 20px; border-bottom: 1px solid #efefef; display: flex; justify-content: space-between; align-items: center;}
+    .sitemap_mobile ul li img {width: 16px;}
+    .sitemap_mobile ul li:last-child {padding-right: 28px;}
+    .sitemap_mobile ul li:last-child img {width: 28px;}
+    .sitemap_mobile_p {font-family: NanumSquareExtraBold; font-size: 16px; font-weight: 900; line-height: 30px; color: #333;}
+
+    .sitemap_flip {display: none; width: 100%; background-color: #f8f9fa; padding: 14px 0 14px 48px;}
+    .sitemap_flip_bold {font-family: NanumSquareExtraBold; font-size: 15px; font-weight: 900; line-height: 22px; margin: 15px 0 3px; color: #333;}
+    .sitemap_flip_p {font-family: NanumSquareRegular; font-size: 15px; line-height: 22px; margin: 10px 0; color: #333;}
+    .flip_icon {transform: rotate(0deg);}
 
 /* slide */
 main {width: 100%;}

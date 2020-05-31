@@ -168,7 +168,7 @@
     
     .support_list {width: 100%; padding: 20px 0; border-right: none;}
 
-    .support_list a {padding: 0 10px 31px 120px; text-align: left;}
+    .support_list a {padding: 0 0 31px 120px; text-align: left;}
     .support_info h3 {font-size: 24px;}
     .support_info p {display: none;}
     
@@ -183,4 +183,19 @@
 
     .footer_wrap {padding: 36px 0 0px;}
     .footer_menu_mobile {padding: 20px 0;}   
+}
+
+@media only screen and (max-width:420px) {
+    .button_prev {right: 85%;}
+    .button_next {left: 85%;}  
+    .content_h1 h1 {font-size: 28px; word-break: keep-all;}
+    .support_info h3 {font-size: 22px;}
+
+    .footer_copy_tablet img {width: 300px;}
+}
+
+@media only screen and (max-width:330px) {    
+    .support_info h3 {font-size: 18px;}
+    .support_list dd {font-size: 12px;}
+    .footer_menu_mobile li {font-size: 12px;}
 }
