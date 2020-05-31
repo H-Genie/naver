@@ -1,238 +1,77 @@
-var mySlide=document.getElementsByClassName('slide_container_full');
-var slideIndex=1;
+var slide=document.getElementsByClassName('slide_container');
+var index=0;
 var currentBar;
 var progressBar=document.getElementsByClassName('progressbar');
 var currentNum=document.getElementsByClassName('current_num');
-
-setInterval(clickNext,5000);
-
-function clickPrev() {   
-    
-    
-    for (i=0; i<mySlide.length; i++) {
-        mySlide[i].style.display="none";
-        }
-
-        if(slideIndex==1) {
-        mySlide[mySlide.length-1].style.display="block";
-        slideIndex=mySlide.length;
-
-        currentBar = 100-(100/(mySlide.length+1));
-        progressBar[mySlide.length-1].style.width=currentBar+"%";
-        currentNum[mySlide.length-1].innerHTML=slideIndex;
-        }
-
-        else {
-        mySlide[slideIndex-2].style.display="block";
-        slideIndex=slideIndex-1;
-
-        currentBar = slideIndex*(100/(mySlide.length+1));
-        progressBar[slideIndex-1].style.width=currentBar+"%";
-        currentNum[slideIndex-1].innerHTML=slideIndex;
-        }  
-}
-
-function clickNext() {        
-    for (i=0; i<mySlide.length; i++) {
-        mySlide[i].style.display="none";
-        }
-
-    if(slideIndex==mySlide.length) {
-        mySlide[0].style.display="block";
-        slideIndex=1;
-
-        currentBar = slideIndex*(100/(mySlide.length+1));
-        progressBar[0].style.width=currentBar+"%";
-        currentNum[0].innerHTML=slideIndex;
-    }
-
-    else {
-        mySlide[slideIndex].style.display="block";
-        slideIndex=slideIndex+1;
-
-        currentBar = slideIndex*(100/(mySlide.length+1));
-        progressBar[slideIndex-1].style.width=currentBar+"%";
-        currentNum[slideIndex-1].innerHTML=slideIndex;
-    }         
-}
-
-
-/*타임아웃
-var mySlide=document.getElementsByClassName('slide_container_full');
-var slideIndex=1;
-var currentBar;
-var progressBar=document.getElementsByClassName('progressbar');
-var currentNum=document.getElementsByClassName('current_num');
-setTimeout(clickNext, 5000);  //시작하는 이벤트
+setInterval(clickNext,5000)
 
 function clickPrev() {
+    if(index==0) { //첫번째 페이지일때 실행
+        slide[slide.length-1].style="left:0; transition: left 0.5s ease-in-out;";
+        slide[index].style="left:100%; transition: left 0.5s ease-in-out;";
+        slide[slide.length-2].style="left:-100%;";
+        index=slide.length-1;
+
+        currentBar = 100-(100/(slide.length+1));
+        progressBar[index].style.width=currentBar+"%";
+        currentNum[index].innerHTML=slide.length;      
+    }
     
-    for (i=0; i<mySlide.length; i++) {
-        mySlide[i].style.display="none";
-        }
+    else if(index!=slide.length-1) { //마지막 페이지가 아닐때 실행  
+        slide[index-1].style="left:0; transition: left 0.5s ease-in-out;";
+        slide[index].style="left:100%; transition: left 0.5s ease-in-out;";                
+        if(index==1) {slide[slide.length-1].style="left:-100%;";}
+        else {slide[index-2].style="left:-100%;";}
+        index-=1;
 
-        if(slideIndex==1) {
-        mySlide[mySlide.length-1].style.display="block";
-        slideIndex=mySlide.length;
+        currentBar = (index+1)*(100/(slide.length+1));
+        progressBar[index].style.width=currentBar+"%";
+        currentNum[index].innerHTML=index+1;
+    }
+               
+    else { //마지막 페이지일때 실행
+        slide[index-1].style="left:0; transition: left 0.5s ease-in-out;";
+        slide[index].style="left:100%; transition: left 0.5s ease-in-out;";
+        slide[index-2].style="left:-100%;";
+        index-=1;
 
-        currentBar = 100-(100/(mySlide.length+1));
-        progressBar[mySlide.length-1].style.width=currentBar+"%";
-        currentNum[mySlide.length-1].innerHTML=slideIndex;
-        }
-
-        else {
-        mySlide[slideIndex-2].style.display="block";
-        slideIndex=slideIndex-1;
-
-        currentBar = slideIndex*(100/(mySlide.length+1));
-        progressBar[slideIndex-1].style.width=currentBar+"%";
-        currentNum[slideIndex-1].innerHTML=slideIndex;
-        }
+        currentBar = (index+1)*(100/(slide.length+1));
+        progressBar[index].style.width=currentBar+"%";
+        currentNum[index].innerHTML=index+1;
+    }             
 }
 
-function clickNext() {
+function clickNext() {                    
+    if(index==0) { //첫번째 페이지일때 실행
+        slide[index+1].style="left:0px; transition:left 0.5s ease-in-out";
+        slide[index].style="left:-100%; transition:left 0.5s ease-in-out";
+        slide[slide.length-1].style="left:100%;";
+        index+=1; 
 
-    for (i=0; i<mySlide.length; i++) {
-        mySlide[i].style.display="none";
-        }
+        currentBar = (index+1)*(100/(slide.length+1));
+        progressBar[index].style.width=currentBar+"%";
+        currentNum[index].innerHTML=index+1;
+    }            
 
-    if(slideIndex==mySlide.length) {
-        mySlide[0].style.display="block";
-        slideIndex=1;
+    else if(index!=slide.length-1) { //마지막 페이지가 아닐때 실행
+        slide[index+1].style="left:0px; transition:left 0.5s ease-in-out";
+        slide[index].style="left:-100%; transition:left 0.5s ease-in-out";
+        slide[index-1].style="left:100%;";
+        index+=1;
 
-        currentBar = slideIndex*(100/(mySlide.length+1));
+        currentBar = (index+1)*(100/(slide.length+1));
+        progressBar[index].style.width=currentBar+"%";
+        currentNum[index].innerHTML=index+1;
+    }
+    
+    else { //마지막 페이지일때 실행
+        slide[0].style="left:0px; transition:left 0.5s ease-in-out";
+        slide[slide.length-1].style="left:-100%; transition:left 0.5s ease-in-out";
+        slide[index-1].style="left:100%;";
+        index=0;
+
+        currentBar = (index+1)*(100/(slide.length+1));
         progressBar[0].style.width=currentBar+"%";
-        currentNum[0].innerHTML=slideIndex;
-    }
-
-    else {
-        mySlide[slideIndex].style.display="block";
-        slideIndex=slideIndex+1;
-
-        currentBar = slideIndex*(100/(mySlide.length+1));
-        progressBar[slideIndex-1].style.width=currentBar+"%";
-        currentNum[slideIndex-1].innerHTML=slideIndex;
-    }
-    
-    setTimeout(clickNext, 5000); //시작하는 이벤트 필요함 
+        currentNum[0].innerHTML=index+1;
+    }               
 }
-*/
-
-
-/*인터벌
-var mySlide=document.getElementsByClassName('slide_container_full');
-var slideIndex=1;
-var currentBar;
-var progressBar=document.getElementsByClassName('progressbar');
-var currentNum=document.getElementsByClassName('current_num');
-setInterval(clickNext, 5000);
-
-function clickPrev() {
-    
-    for (i=0; i<mySlide.length; i++) {
-        mySlide[i].style.display="none";
-        }
-
-        if(slideIndex==1) {
-        mySlide[mySlide.length-1].style.display="block";
-        slideIndex=mySlide.length;
-
-        currentBar = 100-(100/(mySlide.length+1));
-        progressBar[mySlide.length-1].style.width=currentBar+"%";
-        currentNum[mySlide.length-1].innerHTML=slideIndex;
-        }
-
-        else {
-        mySlide[slideIndex-2].style.display="block";
-        slideIndex=slideIndex-1;
-
-        currentBar = slideIndex*(100/(mySlide.length+1));
-        progressBar[slideIndex-1].style.width=currentBar+"%";
-        currentNum[slideIndex-1].innerHTML=slideIndex;
-        }
-}
-
-function clickNext() {
-
-    for (i=0; i<mySlide.length; i++) {
-        mySlide[i].style.display="none";
-        }
-
-    if(slideIndex==mySlide.length) {
-        mySlide[0].style.display="block";
-        slideIndex=1;
-
-        currentBar = slideIndex*(100/(mySlide.length+1));
-        progressBar[0].style.width=currentBar+"%";
-        currentNum[0].innerHTML=slideIndex;
-    }
-
-    else {
-        mySlide[slideIndex].style.display="block";
-        slideIndex=slideIndex+1;
-
-        currentBar = slideIndex*(100/(mySlide.length+1));
-        progressBar[slideIndex-1].style.width=currentBar+"%";
-        currentNum[slideIndex-1].innerHTML=slideIndex;
-    }  
-}
-*/
-
-
-/* 원본 백업
-var mySlide=document.getElementsByClassName('slide_container_full');
-var slideIndex=1;
-var currentBar;
-var progressBar=document.getElementsByClassName('progressbar');
-var currentNum=document.getElementsByClassName('current_num');
-
-function clickPrev() {
-    
-    for (i=0; i<mySlide.length; i++) {
-        mySlide[i].style.display="none";
-        }
-
-        if(slideIndex==1) {
-        mySlide[mySlide.length-1].style.display="block";
-        slideIndex=mySlide.length;
-
-        currentBar = 100-(100/(mySlide.length+1));
-        progressBar[mySlide.length-1].style.width=currentBar+"%";
-        currentNum[mySlide.length-1].innerHTML=slideIndex;
-        }
-
-        else {
-        mySlide[slideIndex-2].style.display="block";
-        slideIndex=slideIndex-1;
-
-        currentBar = slideIndex*(100/(mySlide.length+1));
-        progressBar[slideIndex-1].style.width=currentBar+"%";
-        currentNum[slideIndex-1].innerHTML=slideIndex;
-        }
-}
-
-function clickNext() {
-
-    for (i=0; i<mySlide.length; i++) {
-        mySlide[i].style.display="none";
-        }
-
-    if(slideIndex==mySlide.length) {
-        mySlide[0].style.display="block";
-        slideIndex=1;
-
-        currentBar = slideIndex*(100/(mySlide.length+1));
-        progressBar[0].style.width=currentBar+"%";
-        currentNum[0].innerHTML=slideIndex;
-    }
-
-    else {
-        mySlide[slideIndex].style.display="block";
-        slideIndex=slideIndex+1;
-
-        currentBar = slideIndex*(100/(mySlide.length+1));
-        progressBar[slideIndex-1].style.width=currentBar+"%";
-        currentNum[slideIndex-1].innerHTML=slideIndex;
-    }
-}
-*/

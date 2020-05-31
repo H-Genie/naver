@@ -145,6 +145,11 @@
     .content_p >p:nth-of-type(1) {display: none;}
     .content_p img {display: none;}
 
+    .bg_img_01 {background-image: url(../img/slide1m.png);}
+    .bg_img_02 {background-image: url(../img/slide2m.png);}
+    .bg_img_03 {background-image: url(../img/slide3m.png);}
+    .bg_img_04 {background-image: url(../img/slide4m.png);}
+
 
     /* main */
     .content_summary li {width: 100%; display: flex; justify-content: space-between; border-right: none; padding: 20px 1.574803%;}
