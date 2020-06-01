@@ -8,9 +8,15 @@ var slideInterval=setInterval(clickNext,5000); //인터벌 최초 실행시키�
 function clearInterSlide() {slideInterval=clearInterval(slideInterval);} //변수에다가 인터벌 중지 시키는 함수를 재선언함
 function setInterSlide() {slideInterval=setInterval(clickNext,5000);} //변수에다가 인터벌 다시 실행시키는 함수를 재선언함
 
+window.onload =function() {
+    document.getElementById("button_Next").addEventListener("click",clickNext);
+    document.getElementById("button_Prev").addEventListener("click",clickPrev);
+}
 
 function clickPrev() {
     clearInterSlide();
+    document.getElementById("button_Next").removeEventListener("click",clickNext);
+    document.getElementById("button_Prev").removeEventListener("click",clickPrev);
 
     if(index==0) { //첫번째 페이지일때 실행
         slide[slide.length-1].style="left:0; transition: left 0.5s ease-in-out;";
@@ -44,12 +50,20 @@ function clickPrev() {
         currentBar = (index+1)*(100/(slide.length+1));
         progressBar[index].style.width=currentBar+"%";
         currentNum[index].innerHTML=index+1;
-    }       
+    }      
+
+    setTimeout(function(){
+        document.getElementById("button_Next").addEventListener("click",clickNext);
+        document.getElementById("button_Prev").addEventListener("click",clickPrev);
+    },1000);
     setInterSlide();
 }
 
+
 function clickNext() {          
     clearInterSlide();
+    document.getElementById("button_Next").removeEventListener("click",clickNext);
+    document.getElementById("button_Prev").removeEventListener("click",clickPrev);
     
     if(index==0) { //첫번째 페이지일때 실행
         slide[index+1].style="left:0px; transition:left 0.5s ease-in-out";
@@ -86,5 +100,10 @@ function clickNext() {
         progressBar[0].style.width=currentBar+"%";
         currentNum[0].innerHTML=index+1;
     }       
-    setInterSlide();    
+    
+    setTimeout(function(){
+        document.getElementById("button_Next").addEventListener("click",clickNext);
+        document.getElementById("button_Prev").addEventListener("click",clickPrev);
+    },1000);
+    setInterSlide();
 }
